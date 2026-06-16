@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prey to Hunter | Learn the skills no one teaches you</title>
+  <meta name="description" content="Prey to Hunter teaches you the practical basics of mindset, social skills, dating, money and business — free, no expensive course required." />
+  <meta property="og:title" content="Prey to Hunter | Learn the skills no one teaches you" />
+  <meta property="og:description" content="Practical basics of mindset, social skills, dating, money and business — free to access." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.preytohunter.com/en/" />
+  <meta property="og:site_name" content="Prey to Hunter" />
+  <link rel="canonical" href="https://www.preytohunter.com/en/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/animations.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #09090F; --bg-surface: #0F1117; --bg-raised: #161821;
+      --border: rgba(255,255,255,0.08); --white: #FFFFFF;
+      --text-dark: #FFFFFF; --text-mid: rgba(255,255,255,0.55);
+      --cyan: #00D4FF; --accent: #00E5C0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--bg); overflow-x: hidden; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 60px; background: rgba(9,9,15,0.85);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--white); text-decoration: none; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.88rem; color: rgba(255,255,255,0.75); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; background: transparent; color: var(--white); align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 18px; height: 2px; border-radius: 100px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+    .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-cta { background: var(--accent); color: #09090F; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; padding: 10px 22px; border-radius: 100px; text-decoration: none; }
+    .lang-switch { display: flex; align-items: center; gap: 8px; margin-left: 12px; }
+    .lang-switch .lang-btn { display: inline-flex; text-decoration: none; opacity: 0.4; transition: opacity .2s; border-radius: 3px; overflow: hidden; line-height: 1; }
+    .lang-switch .lang-btn:hover { opacity: 1; }
+    .lang-switch .lang-btn.active { opacity: 1; cursor: default; pointer-events: none; }
+    .lang-switch .lang-flag { width: 26px; height: 17px; display: block; }
+
+    /* ─── HERO ─── */
+    .hero { min-height: 92vh; display: flex; align-items: center; padding: 140px 60px 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -200px; right: -150px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 65%); border-radius: 50%; pointer-events: none; }
+    .hero-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+    .hero-label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; color: var(--cyan); text-transform: uppercase; margin-bottom: 20px; }
+    .hero-title { font-family: 'Syne', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; color: var(--white); letter-spacing: -0.03em; margin-bottom: 24px; }
+    .hero-title em { font-style: normal; color: var(--accent); }
+    .hero-sub { font-size: 1.1rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.8); margin: 0 auto 40px; max-width: 580px; }
+    .hero-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 14px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #09090F; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 16px 32px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 8px 32px rgba(0,229,192,0.25); }
+
+    /* ─── CATEGORIES ─── */
+    .categories { background: var(--bg-surface); padding: 100px 60px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; text-align: center; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; line-height: 1.15; color: var(--text-dark); letter-spacing: -0.03em; margin-bottom: 48px; text-align: center; }
+    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .cat-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; text-decoration: none; display: block; }
+    .cat-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px; }
+    .cat-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+    .cat-card p { font-size: 0.85rem; line-height: 1.65; color: var(--text-mid); }
+
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 60px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--white); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-cta { display: none; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 10px 24px 20px; background: rgba(9,9,15,0.98); border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-links a { display: block; padding: 14px 0; }
+      .nav-open .nav-links { display: flex; }
+      .hero { padding: 120px 24px 60px; }
+      .categories { padding: 60px 24px; }
+      .cat-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/en/index.html" class="nav-logo">Prey to Hunter</a>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/en/index.html">Home</a></li>
+    <li><a href="#categories">Categories</a></li>
+  </ul>
+  <a href="#categories" class="nav-cta">Start learning →</a>
+  <div class="lang-switch">
+    <a href="/index.html" class="lang-btn"><img src="https://flagcdn.com/nl.svg" class="lang-flag" alt="NL" /></a>
+    <span class="lang-btn active"><img src="https://flagcdn.com/gb.svg" class="lang-flag" alt="EN" /></span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Prey to Hunter</div>
+    <h1 class="hero-title">Become the <em>hunter</em>, not the prey.</h1>
+    <p class="hero-sub">The practical basics of mindset, social skills, dating, money and business — skills others pay thousands for, explained here for free.</p>
+    <div class="hero-actions">
+      <a href="#categories" class="btn-primary">Start learning →</a>
+    </div>
+  </div>
+</div>
+
+<div class="categories" id="categories">
+  <div class="section-inner">
+    <div class="section-label">Categories</div>
+    <h2 class="section-title">What do you want to grow in?</h2>
+    <div class="cat-grid">
+      <a href="#" class="cat-card"><div class="cat-icon">🧠</div><h3>Mindset</h3><p>Discipline, mental strength and the foundation under every other skill.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">💬</div><h3>Social Skills</h3><p>Communicate better, build charisma, make an impression without forcing it.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">❤️</div><h3>Dating &amp; Relationships</h3><p>Understand and apply attraction, dating and healthy relationships.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">👔</div><h3>Appearance</h3><p>Style, grooming and a look that fits who you are.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">💪</div><h3>Health</h3><p>Energy, fitness and habits that keep your body and mind sharp.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">💰</div><h3>Money</h3><p>Managing money, saving, investing and becoming financially independent.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">📈</div><h3>Business</h3><p>Entrepreneurship, selling and building your own income.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">🛠️</div><h3>Skills</h3><p>Concrete skills you can apply directly in everyday life.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">🎯</div><h3>Life Skills</h3><p>The practical things no one teaches you in school.</p></a>
+      <a href="#" class="cat-card"><div class="cat-icon">🏆</div><h3>Success Stories</h3><p>Real stories from people who transformed themselves.</p></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Prey to Hunter</div>
+  <div class="footer-copy">© 2026 Prey to Hunter.</div>
+</footer>
+
+<script src="/assets/animations.js"></script>
+</body>
+</html>
