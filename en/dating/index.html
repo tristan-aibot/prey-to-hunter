@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dating & Relationships | Prey to Hunter</title>
+  <meta name="description" content="Attraction without games. All Dating & Relationships articles from Prey to Hunter." />
+  <meta property="og:title" content="Dating &amp; Relationships | Prey to Hunter" />
+  <meta property="og:description" content="Attraction without games." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.preytohunter.com/en/dating/" />
+  <meta property="og:site_name" content="Prey to Hunter" />
+  <link rel="canonical" href="https://www.preytohunter.com/en/dating/" />
+  <link rel="icon" href="/assets/logo-mark-flat.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/animations.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0C0C0E; --bg-surface: #141216; --border: rgba(245,241,232,0.1); --cream: #F5F1E8; --text-mid: rgba(245,241,232,0.58); --gold: #D4AF37; --gold-soft: rgba(212,175,55,0.35); }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--cream); background: var(--bg); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; background: rgba(12,12,14,0.86); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--cream); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { height: 46px; width: auto; display: block; }
+    .logo-accent { color: var(--gold); font-style: italic; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+    .nav-links > li > a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,241,232,0.65); text-decoration: none; transition: color .2s; }
+    .nav-links > li > a:hover { color: var(--cream); }
+    .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(245,241,232,0.25); border-radius: 10px; background: transparent; color: var(--cream); align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 18px; height: 2px; border-radius: 100px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+    .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-cta { border: 1px solid var(--gold-soft); color: var(--gold); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 22px; border-radius: 100px; text-decoration: none; transition: background .2s, color .2s; }
+    .nav-cta:hover { background: var(--gold); color: #0C0C0E; }
+    .lang-switch { display: flex; align-items: center; gap: 8px; margin-left: 16px; font-size: 0.75rem; letter-spacing: 0.06em; }
+    .lang-switch a, .lang-switch span.active { text-decoration: none; }
+    .lang-switch a { color: rgba(245,241,232,0.4); transition: color .2s; }
+    .lang-switch a:hover { color: var(--cream); }
+    .lang-switch span.active { color: var(--gold); }
+    .lang-switch .lang-sep { color: rgba(245,241,232,0.25); }
+    .chapter-hero { min-height: 60vh; display: flex; align-items: flex-end; padding: 160px 60px 80px; position: relative; overflow: hidden; background: var(--bg-surface); }
+    .chapter-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, transparent 60%); pointer-events: none; }
+    .chapter-watermark { position: absolute; top: -2vw; right: -1vw; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 28vw; line-height: 1; color: rgba(245,241,232,0.03); pointer-events: none; user-select: none; }
+    .chapter-inner { max-width: 880px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+    .chapter-kicker { display: flex; align-items: center; gap: 16px; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 26px; }
+    .chapter-kicker::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--gold-soft), transparent); }
+    .chapter-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 700; line-height: 1.05; color: var(--cream); margin-bottom: 24px; }
+    .chapter-intro { font-size: 1.12rem; line-height: 1.8; color: var(--text-mid); font-weight: 300; max-width: 620px; }
+    .article-list { padding: 80px 60px 120px; max-width: 880px; margin: 0 auto; }
+    .list-label { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .list-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 700; color: var(--cream); margin-bottom: 48px; }
+    .articles { display: flex; flex-direction: column; }
+    .article-row { display: flex; align-items: center; gap: 28px; padding: 30px 8px; border-top: 1px solid var(--border); text-decoration: none; transition: padding-left .25s ease, background .25s ease; }
+    .articles .article-row:last-child { border-bottom: 1px solid var(--border); }
+    .article-row:hover { padding-left: 20px; background: rgba(212,175,55,0.04); }
+    .article-row.coming-soon { opacity: 0.38; cursor: default; pointer-events: none; }
+    .art-num { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: rgba(245,241,232,0.3); min-width: 46px; transition: color .25s; }
+    .article-row:hover .art-num { color: var(--gold); }
+    .art-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .art-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: var(--cream); }
+    .art-sub { font-size: 0.84rem; color: var(--text-mid); }
+    .art-tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.3); border: 1px solid rgba(245,241,232,0.15); padding: 3px 10px; border-radius: 100px; width: fit-content; }
+    .art-arrow { font-size: 1.1rem; color: var(--gold); opacity: 0; transform: translateX(-6px); transition: opacity .25s, transform .25s; }
+    .article-row:hover .art-arrow { opacity: 1; transform: translateX(0); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); text-decoration: none; margin: 0 60px 60px; }
+    .back-link:hover { color: var(--cream); }
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 48px 60px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--cream); display: flex; align-items: center; gap: 8px; }
+    .footer-copy { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(245,241,232,0.35); }
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; } .nav-toggle { display: inline-flex; } .nav-cta { display: none; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 10px 24px 20px; background: rgba(12,12,14,0.98); border-bottom: 1px solid var(--border); }
+      .nav-links li { border-bottom: 1px solid var(--border); } .nav-links li:last-child { border-bottom: none; }
+      .nav-links > li > a { display: block; padding: 14px 0; } .nav-open .nav-links { display: flex; }
+      .chapter-hero { padding: 120px 24px 60px; } .chapter-watermark { display: none; }
+      .article-list { padding: 60px 24px 80px; } .back-link { margin: 0 24px 40px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/en/index.html" class="nav-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></a>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/en/index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Mindset &amp; Social <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/en/mindset/" class="dropdown-item">Mindset</a><a href="/en/social-skills/" class="dropdown-item">Social Skills</a><a href="/en/dating/" class="dropdown-item">Dating &amp; Relationships</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Appearance &amp; Health <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/en/appearance/" class="dropdown-item">Appearance</a><a href="/en/health/" class="dropdown-item">Health</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Money &amp; Business <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="#" class="dropdown-item">Money</a><a href="#" class="dropdown-item">Business</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Skills &amp; Stories <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="#" class="dropdown-item">Skills</a><a href="#" class="dropdown-item">Life Skills</a><a href="#" class="dropdown-item">Success Stories</a></div>
+    </li>
+  </ul>
+  <a href="/en/index.html#toc" class="nav-cta">All chapters →</a>
+  <div class="lang-switch"><a href="/dating/">NL</a><span class="lang-sep">/</span><span class="active">EN</span></div>
+</nav>
+
+<div class="chapter-hero">
+  <div class="chapter-watermark">D</div>
+  <div class="chapter-inner">
+    <div class="chapter-kicker">Chapter 03 — Mindset &amp; Social</div>
+    <h1 class="chapter-title">Dating &amp; Relationships.</h1>
+    <p class="chapter-intro">Attraction is not a mystery. A good relationship is not luck. The hunter knows what he wants, pursues it directly — and plays no games.</p>
+  </div>
+</div>
+
+<div class="article-list" id="articles">
+  <div class="list-label">Articles</div>
+  <h2 class="list-title">Choose where to start.</h2>
+  <div class="articles">
+    <a href="/en/dating/without-games/" class="article-row">
+      <span class="art-num">01</span>
+      <span class="art-info">
+        <span class="art-title">Without games</span>
+        <span class="art-sub">Attraction, approaching someone, the first date, and relationships as a system.</span>
+      </span>
+      <span class="art-arrow">→</span>
+    </a>
+    <div class="article-row coming-soon">
+      <span class="art-num">02</span>
+      <span class="art-info">
+        <span class="art-title">What women actually find attractive</span>
+        <span class="art-sub">Not what you think — the real dynamics behind attraction.</span>
+        <span class="art-tag">Coming soon</span>
+      </span>
+    </div>
+    <div class="article-row coming-soon">
+      <span class="art-num">03</span>
+      <span class="art-info">
+        <span class="art-title">Building lasting relationships</span>
+        <span class="art-sub">Communication, boundaries, and keeping your identity inside a relationship.</span>
+        <span class="art-tag">Coming soon</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<a href="/en/index.html#toc" class="back-link">← All chapters</a>
+
+<footer>
+  <div class="footer-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></div>
+  <div class="footer-copy">© MMXXVI Prey to Hunter</div>
+</footer>
+<script src="/assets/animations.js"></script>
+</body>
+</html>

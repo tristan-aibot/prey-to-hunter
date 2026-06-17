@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Silent Message You Always Send | Prey to Hunter</title>
+  <meta name="description" content="Appearance is not vanity — it's communication. How you look tells the world something about who you are before you say a word." />
+  <meta property="og:title" content="The Silent Message You Always Send | Prey to Hunter" />
+  <meta property="og:description" content="Appearance is not vanity — it's communication." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.preytohunter.com/en/appearance/silent-message/" />
+  <meta property="og:site_name" content="Prey to Hunter" />
+  <link rel="canonical" href="https://www.preytohunter.com/en/appearance/silent-message/" />
+  <link rel="icon" href="/assets/logo-mark-flat.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/animations.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0C0C0E; --bg-surface: #141216; --border: rgba(245,241,232,0.1); --cream: #F5F1E8; --text-mid: rgba(245,241,232,0.58); --gold: #D4AF37; --gold-soft: rgba(212,175,55,0.35); }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--cream); background: var(--bg); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; background: rgba(12,12,14,0.86); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--cream); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { height: 46px; width: auto; display: block; }
+    .logo-accent { color: var(--gold); font-style: italic; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+    .nav-links > li > a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,241,232,0.65); text-decoration: none; transition: color .2s; }
+    .nav-links > li > a:hover { color: var(--cream); }
+    .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(245,241,232,0.25); border-radius: 10px; background: transparent; color: var(--cream); align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 18px; height: 2px; border-radius: 100px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+    .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-cta { border: 1px solid var(--gold-soft); color: var(--gold); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 22px; border-radius: 100px; text-decoration: none; transition: background .2s, color .2s; }
+    .nav-cta:hover { background: var(--gold); color: #0C0C0E; }
+    .lang-switch { display: flex; align-items: center; gap: 8px; margin-left: 16px; font-size: 0.75rem; letter-spacing: 0.06em; }
+    .lang-switch a, .lang-switch span.active { text-decoration: none; }
+    .lang-switch a { color: rgba(245,241,232,0.4); transition: color .2s; }
+    .lang-switch a:hover { color: var(--cream); }
+    .lang-switch span.active { color: var(--gold); }
+    .lang-switch .lang-sep { color: rgba(245,241,232,0.25); }
+    .article-hero { padding: 180px 60px 90px; max-width: 880px; margin: 0 auto; }
+    .article-kicker { display: flex; align-items: center; gap: 16px; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 26px; }
+    .article-kicker::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--gold-soft), transparent); }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.1; color: var(--cream); margin-bottom: 28px; }
+    .article-intro { font-size: 1.15rem; line-height: 1.8; color: var(--text-mid); font-weight: 300; max-width: 680px; }
+    .article-body { max-width: 680px; margin: 0 auto; padding: 0 60px 100px; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 1.9rem); font-weight: 700; color: var(--cream); margin: 56px 0 22px; }
+    .article-body p { font-size: 1.04rem; line-height: 1.85; color: rgba(245,241,232,0.78); font-weight: 300; margin-bottom: 20px; }
+    .article-body p strong { color: var(--cream); font-weight: 500; }
+    .pull-quote { border-left: 2px solid var(--gold-soft); padding-left: 24px; margin: 44px 0; }
+    .pull-quote p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; line-height: 1.6; color: var(--cream); font-weight: 500; }
+    .article-nav { max-width: 680px; margin: 0 auto; padding: 0 60px 90px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 36px; }
+    .article-nav a { font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+    .article-nav a:hover { color: var(--cream); }
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 48px 60px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--cream); display: flex; align-items: center; gap: 8px; }
+    .footer-copy { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(245,241,232,0.35); }
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; } .nav-toggle { display: inline-flex; } .nav-cta { display: none; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 10px 24px 20px; background: rgba(12,12,14,0.98); border-bottom: 1px solid var(--border); }
+      .nav-links li { border-bottom: 1px solid var(--border); } .nav-links li:last-child { border-bottom: none; }
+      .nav-links > li > a { display: block; padding: 14px 0; } .nav-open .nav-links { display: flex; }
+      .article-hero { padding: 130px 24px 60px; } .article-body { padding: 0 24px 70px; } .article-nav { padding: 0 24px 70px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/en/index.html" class="nav-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></a>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/en/index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Mindset &amp; Social <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/en/mindset/" class="dropdown-item">Mindset</a><a href="/en/social-skills/" class="dropdown-item">Social Skills</a><a href="/en/dating/" class="dropdown-item">Dating &amp; Relationships</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Appearance &amp; Health <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/en/appearance/" class="dropdown-item">Appearance</a><a href="/en/health/" class="dropdown-item">Health</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Money &amp; Business <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="#" class="dropdown-item">Money</a><a href="#" class="dropdown-item">Business</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Skills &amp; Stories <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="#" class="dropdown-item">Skills</a><a href="#" class="dropdown-item">Life Skills</a><a href="#" class="dropdown-item">Success Stories</a></div>
+    </li>
+  </ul>
+  <a href="/en/index.html#toc" class="nav-cta">All chapters →</a>
+  <div class="lang-switch"><a href="/appearance/de-stille-boodschap/">NL</a><span class="lang-sep">/</span><span class="active">EN</span></div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-kicker">Appearance — Article 01</div>
+  <h1 class="article-title">The silent message you always send.</h1>
+  <p class="article-intro">How you look is not a superficial matter — it's non-verbal communication. Before you say anything, the world has already formed an impression of you. The hunter understands this and uses it deliberately, without becoming a slave to it.</p>
+</div>
+
+<div class="article-body">
+  <h2>Appearance is communication, not vanity</h2>
+  <p>There's a difference between paying attention to your appearance and being obsessed with it. The first is smart — the second is a waste. People who say appearance doesn't matter are lying or fooling themselves. <strong>First impressions are formed in seconds</strong> and they're hard to change.</p>
+  <p>That doesn't mean you have to conform to a specific beauty ideal. It means you're intentional about how you come across — clothing, posture, grooming. That's not vanity; that's respect for the situation.</p>
+
+  <h2>Clothing: fit beats brand</h2>
+  <p>You don't need designer clothing to look good. The only thing that actually matters is whether clothes fit — on your body and for the occasion. A well-fitting basic white T-shirt beats an expensive brand shirt that's too big or too tight every time.</p>
+  <p>Build a capsule wardrobe: a small set of neutral, well-fitting basics you can endlessly combine. Less choice, better outcome. The hunter doesn't dress to stand out — he dresses so he never stands out for the wrong reasons.</p>
+
+  <div class="pull-quote">
+    <p>"You can't make a second first impression. But you can choose which first impression you make."</p>
+  </div>
+
+  <h2>Body language speaks louder than words</h2>
+  <p>Standing straight, moving calmly, maintaining eye contact — these aren't tricks, they're signals of someone comfortable in their own skin. People respond to body language before they process your words.</p>
+  <p>Train yourself to keep your shoulders back, move more slowly than you think you need to, and put your phone away in social situations. Small adjustments with a large impact on how others perceive you.</p>
+
+  <h2>Grooming is the lowest-hanging fruit</h2>
+  <p>Clean skin, trimmed hair, well-maintained nails, fresh breath — this is the absolute minimum and it takes little effort. Yet plenty of men walk around without having these basics in order. Make sure the foundation is right before moving on to clothing or style.</p>
+  <p>A consistent ten-minute grooming routine daily does more for your appearance than an expensive haircut once a month.</p>
+</div>
+
+<div class="article-nav">
+  <a href="/en/appearance/">← Back to Appearance</a>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></div>
+  <div class="footer-copy">© MMXXVI Prey to Hunter</div>
+</footer>
+<script src="/assets/animations.js"></script>
+</body>
+</html>

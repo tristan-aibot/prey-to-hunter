@@ -1,7 +1,7 @@
 /* ─── SCROLL REVEAL ─── */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(28px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -10,7 +10,7 @@
   transform: translateY(0);
 }
 
-/* ─── NOISE TEXTURE ─── */
+/* ─── PAPER GRAIN TEXTURE ─── */
 body::before {
   content: '';
   position: fixed;
@@ -18,7 +18,7 @@ body::before {
   width: 100%; height: 100%;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 128px 128px;
@@ -26,53 +26,44 @@ body::before {
 
 /* ─── NAV SCROLL ─── */
 nav.scrolled {
-  background: rgba(9, 9, 15, 0.98) !important;
+  background: rgba(12, 12, 14, 0.98) !important;
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
-  padding-top: 8px !important;
-  padding-bottom: 10px !important;
   transition: all 0.3s ease;
 }
 
-/* ─── GLOW KNOPPEN ─── */
-.btn-primary {
-  position: relative;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+/* ─── NAV DROPDOWN ─── */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  background: none; border: none; font-family: inherit; cursor: pointer;
+  display: flex; align-items: center; gap: 5px; padding: 0;
+  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(245,241,232,0.65);
 }
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  border-radius: inherit;
-  background: var(--accent, #00E5C0);
-  filter: blur(16px);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.3s ease;
+.nav-dropdown-toggle:hover, .nav-dropdown.open .nav-dropdown-toggle { color: var(--cream, #F5F1E8); }
+.nav-dropdown .caret { font-size: 0.6rem; color: var(--gold, #D4AF37); transition: transform .2s; }
+.nav-dropdown.open .caret { transform: rotate(180deg); }
+.dropdown-panel {
+  position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%);
+  background: var(--bg-raised, #1B181C); border: 1px solid var(--border, rgba(245,241,232,0.1));
+  border-radius: 10px; padding: 10px; min-width: 220px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .18s ease, visibility .18s ease;
 }
-.btn-primary:hover::after {
-  opacity: 0.45;
+.nav-dropdown:hover .dropdown-panel,
+.nav-dropdown.open .dropdown-panel {
+  opacity: 1; visibility: visible; pointer-events: auto;
 }
-.btn-primary:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 16px 48px rgba(0, 229, 192, 0.5) !important;
+.dropdown-item {
+  display: block; padding: 10px 14px; border-radius: 6px;
+  font-family: 'Playfair Display', serif; font-size: 0.92rem;
+  color: rgba(245,241,232,0.8); text-decoration: none; white-space: nowrap;
 }
-
-.btn-white {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-.btn-white:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 16px 48px rgba(255, 255, 255, 0.25) !important;
-}
-
-/* ─── KAART HOVER EFFECTEN ─── */
-.cat-card {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-.cat-card:hover {
-  transform: translateY(-7px) !important;
-  box-shadow: 0 24px 60px rgba(0, 229, 192, 0.1) !important;
+.dropdown-item:hover { background: rgba(212,175,55,0.08); color: var(--cream, #F5F1E8); }
+@media (max-width: 900px) {
+  .nav-dropdown-toggle { width: 100%; justify-content: space-between; padding: 14px 0; }
+  .dropdown-panel {
+    position: static; transform: none; opacity: 1; visibility: visible; pointer-events: auto;
+    background: transparent; border: none; box-shadow: none; padding: 0 0 8px 16px;
+  }
 }

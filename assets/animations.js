@@ -8,6 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  // ─── NAV DROPDOWNS ───
+  document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dropdown = btn.closest('.nav-dropdown');
+      const wasOpen = dropdown.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+      if (!wasOpen) dropdown.classList.add('open');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+  });
+
   // ─── HERO TEKST REVEAL ───
   const heroTitle = document.querySelector('.hero-title');
   if (heroTitle) {
@@ -26,26 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ─── SCROLL REVEAL ───
-  const revealSelectors = [
-    '.section-label', '.section-title', '.section-sub', '.cat-card'
-  ];
-
-  revealSelectors.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => {
-      if (!el.closest('.hero')) {
-        el.classList.add('reveal');
-      }
-    });
+  document.querySelectorAll('.section-label, .section-title, .toc-row').forEach(el => {
+    if (!el.closest('.hero')) el.classList.add('reveal');
   });
 
-  const staggerContainers = ['.cat-grid'];
-  staggerContainers.forEach(selector => {
-    const container = document.querySelector(selector);
-    if (!container) return;
-    container.querySelectorAll('.reveal').forEach((child, i) => {
-      child.style.transitionDelay = Math.min(i * 0.06, 0.4) + 's';
+  const tocList = document.querySelector('.toc-list');
+  if (tocList) {
+    tocList.querySelectorAll('.reveal').forEach((child, i) => {
+      child.style.transitionDelay = Math.min(i * 0.07, 0.4) + 's';
     });
-  });
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
