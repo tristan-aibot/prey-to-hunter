@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Van niets naar iets: Martijn's verhaal | Prey to Hunter</title>
+  <meta name="description" content="Van magazijnmedewerker naar freelance designer in vier jaar. Het echte verhaal van Martijn." />
+  <meta property="og:title" content="Van niets naar iets: Martijn's verhaal | Prey to Hunter" />
+  <meta property="og:description" content="Van magazijnmedewerker naar freelance designer in vier jaar. Het echte verhaal." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.preytohunter.com/verhalen/van-niets-naar-iets/" />
+  <link rel="canonical" href="https://www.preytohunter.com/verhalen/van-niets-naar-iets/" />
+  <link rel="icon" href="/assets/logo-mark-flat.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/animations.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0C0C0E; --bg-surface: #141216; --border: rgba(245,241,232,0.1); --cream: #F5F1E8; --text-mid: rgba(245,241,232,0.58); --gold: #D4AF37; --gold-soft: rgba(212,175,55,0.35); }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--cream); background: var(--bg); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; background: rgba(12,12,14,0.86); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--cream); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { height: 46px; width: auto; display: block; }
+    .logo-accent { color: var(--gold); font-style: italic; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+    .nav-links > li > a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,241,232,0.65); text-decoration: none; transition: color .2s; }
+    .nav-links > li > a:hover { color: var(--cream); }
+    .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(245,241,232,0.25); border-radius: 10px; background: transparent; color: var(--cream); align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 18px; height: 2px; border-radius: 100px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+    .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-cta { border: 1px solid var(--gold-soft); color: var(--gold); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 22px; border-radius: 100px; text-decoration: none; transition: background .2s, color .2s; }
+    .nav-cta:hover { background: var(--gold); color: #0C0C0E; }
+    .lang-switch { display: flex; align-items: center; gap: 8px; margin-left: 16px; font-size: 0.75rem; letter-spacing: 0.06em; }
+    .lang-switch a, .lang-switch span.active { text-decoration: none; }
+    .lang-switch a { color: rgba(245,241,232,0.4); transition: color .2s; }
+    .lang-switch a:hover { color: var(--cream); }
+    .lang-switch span.active { color: var(--gold); }
+    .lang-switch .lang-sep { color: rgba(245,241,232,0.25); }
+    .article-hero { min-height: 72vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 160px 60px 80px; position: relative; background: var(--bg-surface); }
+    .article-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(212,175,55,0.05) 0%, transparent 50%); pointer-events: none; }
+    .article-kicker { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 700; line-height: 1.08; color: var(--cream); max-width: 760px; margin-bottom: 28px; }
+    .article-intro { font-size: 1.15rem; line-height: 1.85; color: var(--text-mid); max-width: 640px; font-weight: 300; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 80px 60px 120px; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700; color: var(--cream); margin: 64px 0 20px; line-height: 1.2; }
+    .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text-mid); margin-bottom: 22px; font-weight: 300; }
+    .article-body strong { color: var(--cream); font-weight: 500; }
+    .pull-quote { border-left: 3px solid var(--gold); padding: 24px 32px; margin: 52px 0; background: rgba(212,175,55,0.04); }
+    .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.7; color: var(--cream); font-style: italic; margin: 0; font-weight: 400; }
+    .article-nav { display: flex; align-items: center; justify-content: space-between; padding: 40px 60px; border-top: 1px solid var(--border); max-width: 720px; margin: 0 auto; }
+    .article-nav a { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+    .article-nav a:hover { color: var(--cream); }
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 48px 60px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--cream); display: flex; align-items: center; gap: 8px; }
+    .footer-copy { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(245,241,232,0.35); }
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; } .nav-toggle { display: inline-flex; } .nav-cta { display: none; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 10px 24px 20px; background: rgba(12,12,14,0.98); border-bottom: 1px solid var(--border); }
+      .nav-links li { border-bottom: 1px solid var(--border); } .nav-links li:last-child { border-bottom: none; }
+      .nav-links > li > a { display: block; padding: 14px 0; } .nav-open .nav-links { display: flex; }
+      .article-hero { padding: 120px 24px 60px; } .article-body { padding: 60px 24px 80px; }
+      .article-nav { padding: 32px 24px; } footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/index.html" class="nav-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></a>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Mindset &amp; Social <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/mindset/" class="dropdown-item">Mindset</a><a href="/social-skills/" class="dropdown-item">Social Skills</a><a href="/dating/" class="dropdown-item">Dating &amp; Relationships</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Uiterlijk &amp; Gezondheid <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/appearance/" class="dropdown-item">Uiterlijk</a><a href="/health/" class="dropdown-item">Gezondheid</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Geld &amp; Business <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/geld/" class="dropdown-item">Geld</a><a href="/business/" class="dropdown-item">Business</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Skills &amp; Verhalen <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/skills/" class="dropdown-item">Skills</a><a href="/life-skills/" class="dropdown-item">Life Skills</a><a href="/verhalen/" class="dropdown-item">Success Stories</a></div>
+    </li>
+  </ul>
+  <a href="/index.html#inhoud" class="nav-cta">Alle hoofdstukken →</a>
+  <div class="lang-switch"><span class="active">NL</span><span class="lang-sep">/</span><a href="/en/success-stories/from-nothing-to-something/">EN</a></div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-kicker">Hoofdstuk 10 — Verhalen · Artikel 01</div>
+  <h1 class="article-title">Van niets naar iets: Martijn's verhaal</h1>
+  <p class="article-intro">Op zijn 24e werkte Martijn als magazijnmedewerker, had hij €400 schuld en wist hij niet wat hij wilde. Op zijn 28e had hij een freelance business, een huurhuis dat hij zelf betaalt en een leven dat hij bewust heeft gekozen. Dit is zijn verhaal.</p>
+</div>
+
+<div class="article-body">
+
+  <h2>De dag dat het klikte</h2>
+  <p>"Ik was 24 en zat in mijn auto op een parkeerplaats na mijn dienst. Het was donker. Ik had net een half uur extra gewerkt zodat de manager me aardig zou vinden — en hij had me niet eens bedankt. Ik dacht: als ik over tien jaar nog zo leef, wat heb ik dan eigenlijk gedaan?"</p>
+  <p>Martijn beschrijft dit als het moment waarop iets knapte — niet dramatisch, niet met veel emotie. Gewoon een heldere gedachte die hij niet meer weg kon denken. <strong>Als hij niets verandert, verandert er niets.</strong></p>
+
+  <h2>Wat hij als eerste veranderde</h2>
+  <p>Geen grote sprong. Geen cursus van duizend euro. Één beslissing: stoppen met tv kijken na 22:00 en die tijd gebruiken om iets te leren. Eerst YouTube-tutorials over grafisch ontwerp. Dan een gratis Figma-cursus. Dan zijn eerste project voor een nicht die een logo wilde.</p>
+  <p>"Gratis. Gewoon om te kijken of ik het kon. Ik had twee weken nodig voor een logo dat een professional in twee uur zou maken. Maar ik had het gemaakt. Dat was het begin."</p>
+
+  <div class="pull-quote">
+    <p>"Het begon niet met een businessplan. Het begon met één avond anders gebruiken dan normaal."</p>
+  </div>
+
+  <h2>De eerste klant</h2>
+  <p>Drie maanden na zijn eerste project plaatste Martijn een bericht op LinkedIn. Hij had geen groot netwerk. Acht likes. Maar twee weken later belde een oud-klasgenoot die een website-redesign nodig had. Eerste echte klant. Eerste echte betaling.</p>
+  <p>"€350 voor een logo. Ik had het gevoel alsof ik de loterij had gewonnen — niet vanwege het bedrag, maar omdat iemand voor mijn werk had betaald. Dat was anders. Dat was bewijs."</p>
+
+  <h2>Wat werkte — en wat niet</h2>
+  <p>Wat werkte: consistent leren, kleine projecten pakken ook als ze weinig opleverden, en vragen stellen aan mensen die al deden wat hij wilde doen. "Ik schreef drie designers aan op LinkedIn met een concrete vraag. Twee reageerden niet. Eén gaf me een half uur advies dat mijn werk in één dag tien keer beter maakte."</p>
+  <p>Wat niet werkte: het proberen te perfectioneren voordat hij begon. "Ik heb twee maanden gewacht op het 'juiste moment' om mijn LinkedIn te updaten. Dat moment bestaat niet. Je moet gewoon beginnen en onderweg beter worden."</p>
+
+  <h2>Les voor de lezer</h2>
+  <p>Martijn is nu 28. Hij werkt fulltime als freelance designer voor drie vaste klanten en één à twee nieuwe per kwartaal. Hij verdient meer dan hij ooit in het magazijn heeft verdiend. Niet spektaculair — maar stabiel, en van hemzelf.</p>
+  <p>"Ik ben geen bijzonder geval. Ik ben niet slim geboren of heb geluk gehad. Ik heb gewoon één avond anders gebruikt dan normaal. En daarna nog één. De meeste mensen wachten op inspiratie of het juiste moment. Ik ook, eerlijk gezegd. Totdat ik ophield met wachten."</p>
+
+</div>
+
+<div class="article-nav">
+  <a href="/verhalen/">← Terug naar Verhalen</a>
+  <a href="/en/success-stories/from-nothing-to-something/">Read in English →</a>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></div>
+  <div class="footer-copy">© MMXXVI Prey to Hunter</div>
+</footer>
+<script src="/assets/animations.js"></script>
+</body>
+</html>

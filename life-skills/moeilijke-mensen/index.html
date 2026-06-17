@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omgaan met moeilijke mensen | Prey to Hunter</title>
+  <meta name="description" content="Er zijn geen moeilijke mensen — alleen moeilijk gedrag. Het verschil verandert alles in hoe je reageert." />
+  <meta property="og:title" content="Omgaan met moeilijke mensen | Prey to Hunter" />
+  <meta property="og:description" content="Er zijn geen moeilijke mensen — alleen moeilijk gedrag. Het verschil verandert alles." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.preytohunter.com/life-skills/moeilijke-mensen/" />
+  <link rel="canonical" href="https://www.preytohunter.com/life-skills/moeilijke-mensen/" />
+  <link rel="icon" href="/assets/logo-mark-flat.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/animations.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0C0C0E; --bg-surface: #141216; --border: rgba(245,241,232,0.1); --cream: #F5F1E8; --text-mid: rgba(245,241,232,0.58); --gold: #D4AF37; --gold-soft: rgba(212,175,55,0.35); }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--cream); background: var(--bg); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; background: rgba(12,12,14,0.86); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--cream); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { height: 46px; width: auto; display: block; }
+    .logo-accent { color: var(--gold); font-style: italic; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+    .nav-links > li > a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,241,232,0.65); text-decoration: none; transition: color .2s; }
+    .nav-links > li > a:hover { color: var(--cream); }
+    .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(245,241,232,0.25); border-radius: 10px; background: transparent; color: var(--cream); align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 18px; height: 2px; border-radius: 100px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+    .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-cta { border: 1px solid var(--gold-soft); color: var(--gold); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 22px; border-radius: 100px; text-decoration: none; transition: background .2s, color .2s; }
+    .nav-cta:hover { background: var(--gold); color: #0C0C0E; }
+    .lang-switch { display: flex; align-items: center; gap: 8px; margin-left: 16px; font-size: 0.75rem; letter-spacing: 0.06em; }
+    .lang-switch a, .lang-switch span.active { text-decoration: none; }
+    .lang-switch a { color: rgba(245,241,232,0.4); transition: color .2s; }
+    .lang-switch a:hover { color: var(--cream); }
+    .lang-switch span.active { color: var(--gold); }
+    .lang-switch .lang-sep { color: rgba(245,241,232,0.25); }
+    .article-hero { min-height: 72vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 160px 60px 80px; position: relative; background: var(--bg-surface); }
+    .article-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(212,175,55,0.05) 0%, transparent 50%); pointer-events: none; }
+    .article-kicker { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 700; line-height: 1.08; color: var(--cream); max-width: 760px; margin-bottom: 28px; }
+    .article-intro { font-size: 1.15rem; line-height: 1.85; color: var(--text-mid); max-width: 640px; font-weight: 300; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 80px 60px 120px; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700; color: var(--cream); margin: 64px 0 20px; line-height: 1.2; }
+    .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text-mid); margin-bottom: 22px; font-weight: 300; }
+    .article-body strong { color: var(--cream); font-weight: 500; }
+    .pull-quote { border-left: 3px solid var(--gold); padding: 24px 32px; margin: 52px 0; background: rgba(212,175,55,0.04); }
+    .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.7; color: var(--cream); font-style: italic; margin: 0; font-weight: 400; }
+    .article-nav { display: flex; align-items: center; justify-content: space-between; padding: 40px 60px; border-top: 1px solid var(--border); max-width: 720px; margin: 0 auto; }
+    .article-nav a { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+    .article-nav a:hover { color: var(--cream); }
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 48px 60px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--cream); display: flex; align-items: center; gap: 8px; }
+    .footer-copy { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(245,241,232,0.35); }
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; } .nav-toggle { display: inline-flex; } .nav-cta { display: none; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 10px 24px 20px; background: rgba(12,12,14,0.98); border-bottom: 1px solid var(--border); }
+      .nav-links li { border-bottom: 1px solid var(--border); } .nav-links li:last-child { border-bottom: none; }
+      .nav-links > li > a { display: block; padding: 14px 0; } .nav-open .nav-links { display: flex; }
+      .article-hero { padding: 120px 24px 60px; } .article-body { padding: 60px 24px 80px; }
+      .article-nav { padding: 32px 24px; } footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/index.html" class="nav-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></a>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Mindset &amp; Social <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/mindset/" class="dropdown-item">Mindset</a><a href="/social-skills/" class="dropdown-item">Social Skills</a><a href="/dating/" class="dropdown-item">Dating &amp; Relationships</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Uiterlijk &amp; Gezondheid <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/appearance/" class="dropdown-item">Uiterlijk</a><a href="/health/" class="dropdown-item">Gezondheid</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Geld &amp; Business <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/geld/" class="dropdown-item">Geld</a><a href="/business/" class="dropdown-item">Business</a></div>
+    </li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Skills &amp; Verhalen <span class="caret">▾</span></button>
+      <div class="dropdown-panel"><a href="/skills/" class="dropdown-item">Skills</a><a href="/life-skills/" class="dropdown-item">Life Skills</a><a href="/verhalen/" class="dropdown-item">Success Stories</a></div>
+    </li>
+  </ul>
+  <a href="/index.html#inhoud" class="nav-cta">Alle hoofdstukken →</a>
+  <div class="lang-switch"><span class="active">NL</span><span class="lang-sep">/</span><a href="/en/life-skills/difficult-people/">EN</a></div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-kicker">Hoofdstuk 09 — Life Skills · Artikel 02</div>
+  <h1 class="article-title">Omgaan met moeilijke mensen</h1>
+  <p class="article-intro">Er zijn geen moeilijke mensen. Alleen mensen wier gedrag moeilijk is — en een verschil maken tussen die twee verandert alles.</p>
+</div>
+
+<div class="article-body">
+
+  <h2>Waarom mensen 'moeilijk' zijn</h2>
+  <p>Agressief gedrag, passief-agressiviteit, chronisch negativisme, grenzeloosheid — het komt bijna altijd voort uit angst, onzekerheid of een onvervulde behoefte. Dat verontschuldigt het gedrag niet. Maar het maakt het verklaarbaar — en daarmee handelbaar.</p>
+  <p>Zodra je stopt met denken "wat is die persoon vervelend" en begint met "wat is er aan de hand bij die persoon", verschuift je hele aanpak. Van reactief naar strategisch.</p>
+
+  <h2>De eerste reactie beheersen</h2>
+  <p>Je hebt geen controle over wat iemand doet. Wel over hoe je reageert. De ruimte tussen stimulus en respons is klein maar beslissend.</p>
+  <p>Drie seconden voor je reageert. Niet uit zwakte — uit kracht. Adem in. Neem afstand van de emotie. Kies dan je respons. <strong>Een gecontroleerde reactie wint altijd van een emotionele reactie</strong> — zowel in de relatie als in de uitkomst.</p>
+
+  <div class="pull-quote">
+    <p>"You can't control what other people do. You can only control how you respond."</p>
+  </div>
+
+  <h2>Grenzen stellen zonder conflict</h2>
+  <p>Een grens is geen straf voor de ander — het is een statement over wat jij accepteert. De formulering maakt het verschil.</p>
+  <p>"Jij bent altijd zo agressief" is een aanval. "Ik werk niet goed als gesprekken op deze toon gaan" is een grens. Vanuit jezelf, niet als oordeel over de ander. Rustig, direct, zonder excuus. Niet meer, niet minder.</p>
+
+  <h2>Empathie als strategisch middel</h2>
+  <p>Probeer te begrijpen waarom iemand zich zo gedraagt. Niet om het goed te praten — maar om effectiever te reageren. Mensen die zich begrepen voelen, escaleren minder snel.</p>
+  <p>Empathie is geen zwakte. Het is informatie. En informatie geeft je opties. "Ik zie dat je gefrustreerd bent" opent een gesprek. "Je bent altijd zo moeilijk" sluit het.</p>
+
+  <h2>Wanneer afstand nemen de juiste keuze is</h2>
+  <p>Niet elk conflict is oplosbaar. Niet elke relatie is de moeite waard van de energie die erin gaat. Als iemand structureel grensoverschrijdend gedrag vertoont en niet verandert ondanks duidelijke feedback: afstand is soms de gezondste keuze.</p>
+  <p>Dat is geen opgeven. Dat is zelfbescherming. Je tijd en energie zijn eindig. Wie je ze geeft, bepaalt de kwaliteit van je leven.</p>
+
+</div>
+
+<div class="article-nav">
+  <a href="/life-skills/">← Terug naar Life Skills</a>
+  <a href="/en/life-skills/difficult-people/">Read in English →</a>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></div>
+  <div class="footer-copy">© MMXXVI Prey to Hunter</div>
+</footer>
+<script src="/assets/animations.js"></script>
+</body>
+</html>
