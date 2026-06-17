@@ -65,26 +65,18 @@
     .hero-quote { border-left: 2px solid var(--gold-soft); padding-left: 24px; margin-bottom: 46px; max-width: 560px; }
     .hero-quote p { font-size: 1.08rem; line-height: 1.8; color: var(--text-mid); font-weight: 300; }
     .hero-quote p::first-letter { font-family: 'Playfair Display', serif; font-size: 2.6em; float: left; line-height: 0.75; padding-right: 8px; color: var(--gold); font-weight: 700; }
-    .hero-actions { display: flex; align-items: center; gap: 14px; }
+    .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .btn-outline { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--gold-soft); color: var(--gold); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 30px; border-radius: 100px; text-decoration: none; transition: background .2s, color .2s; }
     .btn-outline:hover { background: var(--gold); color: #0C0C0E; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 10px; color: var(--text-mid); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 0; text-decoration: none; transition: color .2s; }
+    .btn-ghost:hover { color: var(--cream); }
 
-    /* ─── INHOUDSOPGAVE ─── */
-    .toc { background: var(--bg-surface); padding: 120px 60px; }
-    .section-inner { max-width: 880px; margin: 0 auto; }
-    .section-label { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; color: var(--cream); margin-bottom: 56px; }
-    .toc-list { display: flex; flex-direction: column; }
-    .toc-row { display: flex; align-items: center; gap: 28px; padding: 30px 8px; border-top: 1px solid var(--border); text-decoration: none; transition: padding-left .25s ease, background .25s ease; }
-    .toc-list .toc-row:last-child { border-bottom: 1px solid var(--border); }
-    .toc-row:hover { padding-left: 20px; background: rgba(212,175,55,0.04); }
-    .toc-num { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: rgba(245,241,232,0.3); min-width: 46px; transition: color .25s; }
-    .toc-row:hover .toc-num { color: var(--gold); }
-    .toc-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
-    .toc-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--cream); }
-    .toc-sub { font-size: 0.84rem; color: var(--text-mid); }
-    .toc-arrow { font-size: 1.1rem; color: var(--gold); opacity: 0; transform: translateX(-6px); transition: opacity .25s, transform .25s; }
-    .toc-row:hover .toc-arrow { opacity: 1; transform: translateX(0); }
+    /* ─── STATS BAR ─── */
+    .stats-bar { background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 60px; display: flex; align-items: center; justify-content: center; gap: 80px; }
+    .stat { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); }
+    .stat-sep { width: 1px; height: 40px; background: var(--border); }
 
     /* ─── MANIFESTO ─── */
     .manifesto { padding: 120px 60px; background: var(--bg); }
@@ -99,9 +91,65 @@
     .manifesto-body p strong { color: var(--cream); font-weight: 500; }
     .manifesto-close { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 600; color: var(--gold); margin-top: 52px; }
 
-    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 48px 60px; display: flex; align-items: center; justify-content: space-between; }
-    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--cream); display: flex; align-items: center; gap: 8px; }
-    .footer-copy { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(245,241,232,0.35); }
+    /* ─── HOOFDSTUKKEN GRID ─── */
+    .chapters { background: var(--bg-surface); padding: 120px 60px; }
+    .chapters-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; color: var(--cream); margin-bottom: 16px; }
+    .section-sub { font-size: 1rem; color: var(--text-mid); font-weight: 300; margin-bottom: 64px; max-width: 520px; line-height: 1.7; }
+    .chapter-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .chapter-card { background: var(--bg); padding: 40px 44px; text-decoration: none; display: flex; flex-direction: column; gap: 16px; transition: background .2s; position: relative; overflow: hidden; border: 1px solid transparent; }
+    .chapter-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), transparent); opacity: 0; transition: opacity .25s; }
+    .chapter-card:hover { background: rgba(212,175,55,0.04); border-color: rgba(212,175,55,0.12); }
+    .chapter-card:hover::before { opacity: 1; }
+    .chapter-card-num { font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 600; color: rgba(245,241,232,0.25); letter-spacing: 0.1em; }
+    .chapter-card-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--cream); line-height: 1.2; transition: color .2s; }
+    .chapter-card:hover .chapter-card-title { color: var(--gold); }
+    .chapter-card-desc { font-size: 0.9rem; line-height: 1.7; color: var(--text-mid); font-weight: 300; flex: 1; }
+    .chapter-card-arrow { font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); opacity: 0; transition: opacity .2s; }
+    .chapter-card:hover .chapter-card-arrow { opacity: 1; }
+    .chapter-card-wm { position: absolute; bottom: -10px; right: -4px; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 7rem; line-height: 1; color: rgba(245,241,232,0.025); pointer-events: none; user-select: none; }
+
+    /* ─── FEATURED ARTIKELEN ─── */
+    .featured { padding: 120px 60px; background: var(--bg); }
+    .featured-inner { max-width: 1100px; margin: 0 auto; }
+    .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
+    .article-card { background: var(--bg-surface); border: 1px solid var(--border); padding: 36px; display: flex; flex-direction: column; gap: 14px; text-decoration: none; transition: border-color .2s, background .2s; }
+    .article-card:hover { border-color: rgba(212,175,55,0.3); background: rgba(212,175,55,0.03); }
+    .article-card-tag { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .article-card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--cream); line-height: 1.3; }
+    .article-card-excerpt { font-size: 0.88rem; line-height: 1.7; color: var(--text-mid); font-weight: 300; flex: 1; }
+    .article-card-link { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
+
+    /* ─── FOR WHO ─── */
+    .for-who { padding: 120px 60px; background: var(--bg-surface); }
+    .for-who-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .for-who-text { display: flex; flex-direction: column; gap: 24px; }
+    .for-who-text p { font-size: 1.05rem; line-height: 1.9; color: var(--text-mid); font-weight: 300; }
+    .for-who-text p strong { color: var(--cream); font-weight: 500; }
+    .for-who-list { display: flex; flex-direction: column; gap: 0; }
+    .for-who-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .for-who-list .for-who-item:first-child { border-top: 1px solid var(--border); }
+    .for-who-check { width: 20px; height: 20px; border: 1px solid var(--gold-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; color: var(--gold); font-size: 0.7rem; }
+    .for-who-item-text { font-size: 0.95rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; }
+    .for-who-item-text strong { color: var(--cream); font-weight: 500; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 64px 60px 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 60px; margin-bottom: 48px; }
+    .footer-brand { display: flex; flex-direction: column; gap: 16px; max-width: 300px; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: var(--cream); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .footer-tagline { font-size: 0.88rem; line-height: 1.7; color: var(--text-mid); font-weight: 300; }
+    .footer-nav { display: flex; gap: 60px; }
+    .footer-col { display: flex; flex-direction: column; gap: 14px; }
+    .footer-col-title { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .footer-col a { font-size: 0.88rem; color: var(--text-mid); text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(245,241,232,0.25); }
+    .footer-lang { display: flex; gap: 16px; }
+    .footer-lang a { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(245,241,232,0.35); text-decoration: none; transition: color .2s; }
+    .footer-lang a:hover { color: var(--cream); }
 
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
@@ -114,11 +162,19 @@
       .nav-open .nav-links { display: flex; }
       .hero { padding: 130px 24px 60px; }
       .hero-watermark { display: none; }
+      .stats-bar { padding: 24px; gap: 28px; flex-wrap: wrap; justify-content: space-around; }
+      .stat-sep { display: none; }
       .manifesto { padding: 70px 24px; }
-      .toc { padding: 70px 24px; }
-      .toc-row { gap: 16px; padding: 24px 4px; }
-      .toc-title { font-size: 1.05rem; }
-      footer { flex-direction: column; gap: 16px; text-align: center; }
+      .chapters { padding: 70px 24px; }
+      .chapter-grid { grid-template-columns: 1fr; }
+      .featured { padding: 70px 24px; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .for-who { padding: 70px 24px; }
+      .for-who-inner { grid-template-columns: 1fr; gap: 48px; }
+      footer { padding: 48px 24px 32px; }
+      .footer-top { flex-direction: column; gap: 40px; }
+      .footer-nav { flex-direction: column; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
@@ -160,30 +216,56 @@
       </div>
     </li>
   </ul>
-  <a href="#inhoud" class="nav-cta">Begin het verhaal →</a>
+  <a href="#inhoud" class="nav-cta">Alle hoofdstukken →</a>
   <div class="lang-switch">
     <span class="active">NL</span><span class="lang-sep">/</span><a href="/en/index.html">EN</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <video class="hero-video" autoplay muted loop playsinline poster="/assets/video/hero-poster.jpg">
     <source src="/assets/video/hero.mp4" type="video/mp4" />
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-watermark">01</div>
+  <div class="hero-watermark">P</div>
   <div class="hero-inner">
-    <div class="hero-kicker">Prey to Hunter — Editie I</div>
+    <div class="hero-kicker">Prey to Hunter</div>
     <h1 class="hero-title">Word de <em>Hunter</em>,<br>niet de prey.</h1>
     <div class="hero-quote">
       <p>De praktische basis van mindset, social skills, dating, geld en business — skills waar anderen duizenden euro's voor betalen, hier voor het eerst gratis uitgelegd.</p>
     </div>
     <div class="hero-actions">
-      <a href="#inhoud" class="btn-outline">Begin het verhaal →</a>
+      <a href="#inhoud" class="btn-outline">Bekijk alle hoofdstukken →</a>
+      <a href="/mindset/de-basis/" class="btn-ghost">Begin met lezen ↓</a>
     </div>
   </div>
 </div>
 
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">10</span>
+    <span class="stat-label">Hoofdstukken</span>
+  </div>
+  <div class="stat-sep"></div>
+  <div class="stat">
+    <span class="stat-num">18</span>
+    <span class="stat-label">Artikelen live</span>
+  </div>
+  <div class="stat-sep"></div>
+  <div class="stat">
+    <span class="stat-num">NL / EN</span>
+    <span class="stat-label">Tweetalig</span>
+  </div>
+  <div class="stat-sep"></div>
+  <div class="stat">
+    <span class="stat-num">Gratis</span>
+    <span class="stat-label">Altijd toegankelijk</span>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
 <div class="manifesto">
   <div class="manifesto-inner">
     <div class="manifesto-label">De Missie</div>
@@ -205,50 +287,221 @@
   </div>
 </div>
 
-<div class="toc" id="inhoud">
-  <div class="section-inner">
-    <div class="section-label">Inhoudsopgave</div>
-    <h2 class="section-title">Kies je hoofdstuk.</h2>
-    <div class="toc-list">
-      <a href="/mindset/" class="toc-row">
-        <span class="toc-num">01</span>
-        <span class="toc-info">
-          <span class="toc-title">Mindset &amp; Social</span>
-          <span class="toc-sub">Mindset · Social Skills · Dating &amp; Relationships</span>
-        </span>
-        <span class="toc-arrow">→</span>
+<!-- ALLE HOOFDSTUKKEN -->
+<div class="chapters" id="inhoud">
+  <div class="chapters-inner">
+    <div class="section-label">De bibliotheek</div>
+    <h2 class="section-title">Alle 10 hoofdstukken.</h2>
+    <p class="section-sub">Kies het gebied waar je nu het meeste wilt groeien. Elk hoofdstuk is zelfstandig te lezen — begin waar je wilt.</p>
+    <div class="chapter-grid">
+
+      <a href="/mindset/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 01</span>
+        <span class="chapter-card-title">Mindset</span>
+        <span class="chapter-card-desc">De basis van alles. Hoe je denkt bepaalt wat je doet, en wat je doet bepaalt wie je wordt. Radicale verantwoordelijkheid, discipline boven motivatie, falen als data.</span>
+        <span class="chapter-card-arrow">Ga naar Mindset →</span>
+        <span class="chapter-card-wm">M</span>
       </a>
-      <a href="/appearance/" class="toc-row">
-        <span class="toc-num">02</span>
-        <span class="toc-info">
-          <span class="toc-title">Uiterlijk &amp; Gezondheid</span>
-          <span class="toc-sub">Appearance · Health</span>
-        </span>
-        <span class="toc-arrow">→</span>
+
+      <a href="/social-skills/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 02</span>
+        <span class="chapter-card-title">Social Skills</span>
+        <span class="chapter-card-desc">Echte verbinding bouwen zonder toneelspelen. Gesprekken starten, luisteren, jezelf neerzetten — het systeem achter mensen die moeiteloos connecten.</span>
+        <span class="chapter-card-arrow">Ga naar Social Skills →</span>
+        <span class="chapter-card-wm">S</span>
       </a>
-      <a href="/geld/" class="toc-row">
-        <span class="toc-num">03</span>
-        <span class="toc-info">
-          <span class="toc-title">Geld &amp; Business</span>
-          <span class="toc-sub">Money · Business</span>
-        </span>
-        <span class="toc-arrow">→</span>
+
+      <a href="/dating/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 03</span>
+        <span class="chapter-card-title">Dating &amp; Relationships</span>
+        <span class="chapter-card-desc">Aantrekkingskracht zonder spelletjes. Iemand aanspreken, daten, en relaties bouwen die werken — op basis van wie je bent, niet wie je denkt te moeten zijn.</span>
+        <span class="chapter-card-arrow">Ga naar Dating →</span>
+        <span class="chapter-card-wm">D</span>
       </a>
-      <a href="/skills/" class="toc-row">
-        <span class="toc-num">04</span>
-        <span class="toc-info">
-          <span class="toc-title">Skills &amp; Verhalen</span>
-          <span class="toc-sub">Skills · Life Skills · Success Stories</span>
-        </span>
-        <span class="toc-arrow">→</span>
+
+      <a href="/appearance/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 04</span>
+        <span class="chapter-card-title">Uiterlijk</span>
+        <span class="chapter-card-desc">Je stuurt altijd een boodschap — bewust of niet. Kleding, lichaamstaal, verzorging. Niet voor anderen, maar omdat je weet dat eerste indrukken tellen.</span>
+        <span class="chapter-card-arrow">Ga naar Uiterlijk →</span>
+        <span class="chapter-card-wm">U</span>
       </a>
+
+      <a href="/health/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 05</span>
+        <span class="chapter-card-title">Gezondheid</span>
+        <span class="chapter-card-desc">Het fundament dat alles draagt. Slaap, beweging, voeding, mentale gezondheid — je kunt geen topprestaties leveren als je lichaam op reserves draait.</span>
+        <span class="chapter-card-arrow">Ga naar Gezondheid →</span>
+        <span class="chapter-card-wm">G</span>
+      </a>
+
+      <a href="/geld/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 06</span>
+        <span class="chapter-card-title">Geld</span>
+        <span class="chapter-card-desc">Geld is een gereedschap, geen doel. Hoe het systeem werkt, hoe je marge creëert, hoe compound interest doet wat jij niet doet als je slaapt.</span>
+        <span class="chapter-card-arrow">Ga naar Geld →</span>
+        <span class="chapter-card-wm">G</span>
+      </a>
+
+      <a href="/business/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 07</span>
+        <span class="chapter-card-title">Business</span>
+        <span class="chapter-card-desc">Van idee naar inkomen — zonder 30-pagina businessplan. Valideren, je eerste klant vinden, verkopen zonder vervelend te zijn, en schalen als het werkt.</span>
+        <span class="chapter-card-arrow">Ga naar Business →</span>
+        <span class="chapter-card-wm">B</span>
+      </a>
+
+      <a href="/skills/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 08</span>
+        <span class="chapter-card-title">Skills</span>
+        <span class="chapter-card-desc">Leren leren, schrijven, spreken, onderhandelen. Elke skill die je bouwt maakt je waardevoller — en skills zijn het enige dat niemand je kan afnemen.</span>
+        <span class="chapter-card-arrow">Ga naar Skills →</span>
+        <span class="chapter-card-wm">S</span>
+      </a>
+
+      <a href="/life-skills/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 09</span>
+        <span class="chapter-card-title">Life Skills</span>
+        <span class="chapter-card-desc">Tijd en energie managen, koken, omgaan met moeilijke mensen. De praktische dingen die niemand je leert, maar iedereen nodig heeft om zijn leven goed te runnen.</span>
+        <span class="chapter-card-arrow">Ga naar Life Skills →</span>
+        <span class="chapter-card-wm">L</span>
+      </a>
+
+      <a href="/verhalen/" class="chapter-card">
+        <span class="chapter-card-num">Hoofdstuk 10</span>
+        <span class="chapter-card-title">Success Stories</span>
+        <span class="chapter-card-desc">Theorie is mooi. Maar niets inspireert meer dan een echt verhaal van iemand die de sprong nam, faalde, leerde, en zijn leven veranderde.</span>
+        <span class="chapter-card-arrow">Ga naar Verhalen →</span>
+        <span class="chapter-card-wm">V</span>
+      </a>
+
     </div>
   </div>
 </div>
 
+<!-- FEATURED ARTIKELEN -->
+<div class="featured">
+  <div class="featured-inner">
+    <div class="section-label">Aanbevolen</div>
+    <h2 class="section-title">Begin hier.</h2>
+    <p class="section-sub">Vier artikelen die een direct verschil maken — ongeacht waar je nu staat.</p>
+    <div class="featured-grid">
+
+      <a href="/mindset/de-basis/" class="article-card">
+        <span class="article-card-tag">Mindset · Artikel 01</span>
+        <span class="article-card-title">Mindset: de basis van alles</span>
+        <span class="article-card-excerpt">Radicale verantwoordelijkheid, de comfortzone, discipline versus motivatie — en waarom de meeste mensen nooit veranderen.</span>
+        <span class="article-card-link">Lees het artikel →</span>
+      </a>
+
+      <a href="/geld/hoe-geld-werkt/" class="article-card">
+        <span class="article-card-tag">Geld · Artikel 01</span>
+        <span class="article-card-title">Hoe geld echt werkt</span>
+        <span class="article-card-excerpt">Wat ze je op school niet leren. Inkomsten, uitgaven, de drie buckets, en compound interest — het complete raamwerk in één artikel.</span>
+        <span class="article-card-link">Lees het artikel →</span>
+      </a>
+
+      <a href="/skills/leren-leren/" class="article-card">
+        <span class="article-card-tag">Skills · Artikel 01</span>
+        <span class="article-card-title">Leren leren</span>
+        <span class="article-card-excerpt">Retrieval practice, spaced repetition, het Feynman-principe. Het systeem achter mensen die nieuwe skills razendsnel oppikken.</span>
+        <span class="article-card-link">Lees het artikel →</span>
+      </a>
+
+      <a href="/health/het-fundament/" class="article-card">
+        <span class="article-card-tag">Gezondheid · Artikel 01</span>
+        <span class="article-card-title">Het fundament dat alles draagt</span>
+        <span class="article-card-excerpt">Slaap, beweging, voeding en mentale gezondheid. Zonder dit fundament werkt niets — het is de basis waarop alles rust.</span>
+        <span class="article-card-link">Lees het artikel →</span>
+      </a>
+
+      <a href="/business/van-idee-naar-inkomen/" class="article-card">
+        <span class="article-card-tag">Business · Artikel 01</span>
+        <span class="article-card-title">Van idee naar inkomen</span>
+        <span class="article-card-excerpt">Valideren vóór bouwen, je eerste klant vinden, het minimum levensvatbaar aanbod. Zonder perfect te wachten.</span>
+        <span class="article-card-link">Lees het artikel →</span>
+      </a>
+
+      <a href="/life-skills/tijd-en-energie/" class="article-card">
+        <span class="article-card-tag">Life Skills · Artikel 01</span>
+        <span class="article-card-title">Tijd en energie managen</span>
+        <span class="article-card-excerpt">Druk zijn is niet hetzelfde als productief zijn. De MIT-methode, de kunst van nee zeggen, de vier energiebronnen.</span>
+        <span class="article-card-link">Lees het artikel →</span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- VOOR WIE -->
+<div class="for-who">
+  <div class="for-who-inner">
+    <div class="for-who-text">
+      <div class="section-label">Voor wie</div>
+      <h2 class="section-title">Voor mensen die klaar zijn met stilstaan.</h2>
+      <p>Prey to Hunter is niet voor iedereen. Het is voor mensen die weten dat ze meer uit zichzelf kunnen halen — maar niet weten waar te beginnen, of wie ze kunnen vertrouwen.</p>
+      <p>Geen <strong>motivatiespeech</strong>. Geen <strong>dure cursus</strong>. Geen <strong>guru</strong>. Gewoon de eerlijke, praktische basis — de dingen die werken, uitgelegd zonder onzin.</p>
+    </div>
+    <div class="for-who-list">
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>Je voelt dat er meer in zit</strong>, maar je weet niet goed hoe je dat naar buiten brengt.</span>
+      </div>
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>Je bent moe van vaag advies</strong> en zoekt concrete dingen die je vandaag al kunt toepassen.</span>
+      </div>
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>Je wil groeien op je eigen tempo</strong>, zonder druk van een community of betaalmuur.</span>
+      </div>
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>Je begrijpt dat geen enkele skill vanzelf komt</strong> — maar je bent bereid het werk te doen.</span>
+      </div>
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>Je wil de hunter zijn</strong>, niet de prey die reageert op wat er op hem afkomt.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></div>
-  <div class="footer-copy">© MMXXVI Prey to Hunter</div>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="/index.html" class="footer-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></a>
+      <p class="footer-tagline">Praktische skills voor mensen die klaar zijn met stilstaan. Gratis, direct, zonder onzin.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <span class="footer-col-title">Mindset &amp; Social</span>
+        <a href="/mindset/">Mindset</a>
+        <a href="/social-skills/">Social Skills</a>
+        <a href="/dating/">Dating &amp; Relationships</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Lichaam &amp; Geld</span>
+        <a href="/appearance/">Uiterlijk</a>
+        <a href="/health/">Gezondheid</a>
+        <a href="/geld/">Geld</a>
+        <a href="/business/">Business</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Skills &amp; Verhalen</span>
+        <a href="/skills/">Skills</a>
+        <a href="/life-skills/">Life Skills</a>
+        <a href="/verhalen/">Success Stories</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© MMXXVI Prey to Hunter — Alle rechten voorbehouden</span>
+    <div class="footer-lang">
+      <a href="/en/index.html">English version</a>
+    </div>
+  </div>
 </footer>
 
 <script src="/assets/animations.js"></script>

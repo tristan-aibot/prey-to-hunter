@@ -65,26 +65,18 @@
     .hero-quote { border-left: 2px solid var(--gold-soft); padding-left: 24px; margin-bottom: 46px; max-width: 560px; }
     .hero-quote p { font-size: 1.08rem; line-height: 1.8; color: var(--text-mid); font-weight: 300; }
     .hero-quote p::first-letter { font-family: 'Playfair Display', serif; font-size: 2.6em; float: left; line-height: 0.75; padding-right: 8px; color: var(--gold); font-weight: 700; }
-    .hero-actions { display: flex; align-items: center; gap: 14px; }
+    .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .btn-outline { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--gold-soft); color: var(--gold); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 30px; border-radius: 100px; text-decoration: none; transition: background .2s, color .2s; }
     .btn-outline:hover { background: var(--gold); color: #0C0C0E; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 10px; color: var(--text-mid); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 0; text-decoration: none; transition: color .2s; }
+    .btn-ghost:hover { color: var(--cream); }
 
-    /* ─── TABLE OF CONTENTS ─── */
-    .toc { background: var(--bg-surface); padding: 120px 60px; }
-    .section-inner { max-width: 880px; margin: 0 auto; }
-    .section-label { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; color: var(--cream); margin-bottom: 56px; }
-    .toc-list { display: flex; flex-direction: column; }
-    .toc-row { display: flex; align-items: center; gap: 28px; padding: 30px 8px; border-top: 1px solid var(--border); text-decoration: none; transition: padding-left .25s ease, background .25s ease; }
-    .toc-list .toc-row:last-child { border-bottom: 1px solid var(--border); }
-    .toc-row:hover { padding-left: 20px; background: rgba(212,175,55,0.04); }
-    .toc-num { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: rgba(245,241,232,0.3); min-width: 46px; transition: color .25s; }
-    .toc-row:hover .toc-num { color: var(--gold); }
-    .toc-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
-    .toc-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--cream); }
-    .toc-sub { font-size: 0.84rem; color: var(--text-mid); }
-    .toc-arrow { font-size: 1.1rem; color: var(--gold); opacity: 0; transform: translateX(-6px); transition: opacity .25s, transform .25s; }
-    .toc-row:hover .toc-arrow { opacity: 1; transform: translateX(0); }
+    /* ─── STATS BAR ─── */
+    .stats-bar { background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 60px; display: flex; align-items: center; justify-content: center; gap: 80px; }
+    .stat { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); }
+    .stat-sep { width: 1px; height: 40px; background: var(--border); }
 
     /* ─── MANIFESTO ─── */
     .manifesto { padding: 120px 60px; background: var(--bg); }
@@ -99,9 +91,65 @@
     .manifesto-body p strong { color: var(--cream); font-weight: 500; }
     .manifesto-close { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 600; color: var(--gold); margin-top: 52px; }
 
-    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 48px 60px; display: flex; align-items: center; justify-content: space-between; }
-    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--cream); display: flex; align-items: center; gap: 8px; }
-    .footer-copy { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(245,241,232,0.35); }
+    /* ─── CHAPTERS GRID ─── */
+    .chapters { background: var(--bg-surface); padding: 120px 60px; }
+    .chapters-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; color: var(--cream); margin-bottom: 16px; }
+    .section-sub { font-size: 1rem; color: var(--text-mid); font-weight: 300; margin-bottom: 64px; max-width: 520px; line-height: 1.7; }
+    .chapter-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .chapter-card { background: var(--bg); padding: 40px 44px; text-decoration: none; display: flex; flex-direction: column; gap: 16px; transition: background .2s; position: relative; overflow: hidden; border: 1px solid transparent; }
+    .chapter-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), transparent); opacity: 0; transition: opacity .25s; }
+    .chapter-card:hover { background: rgba(212,175,55,0.04); border-color: rgba(212,175,55,0.12); }
+    .chapter-card:hover::before { opacity: 1; }
+    .chapter-card-num { font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 600; color: rgba(245,241,232,0.25); letter-spacing: 0.1em; }
+    .chapter-card-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--cream); line-height: 1.2; transition: color .2s; }
+    .chapter-card:hover .chapter-card-title { color: var(--gold); }
+    .chapter-card-desc { font-size: 0.9rem; line-height: 1.7; color: var(--text-mid); font-weight: 300; flex: 1; }
+    .chapter-card-arrow { font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); opacity: 0; transition: opacity .2s; }
+    .chapter-card:hover .chapter-card-arrow { opacity: 1; }
+    .chapter-card-wm { position: absolute; bottom: -10px; right: -4px; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 7rem; line-height: 1; color: rgba(245,241,232,0.025); pointer-events: none; user-select: none; }
+
+    /* ─── FEATURED ARTICLES ─── */
+    .featured { padding: 120px 60px; background: var(--bg); }
+    .featured-inner { max-width: 1100px; margin: 0 auto; }
+    .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
+    .article-card { background: var(--bg-surface); border: 1px solid var(--border); padding: 36px; display: flex; flex-direction: column; gap: 14px; text-decoration: none; transition: border-color .2s, background .2s; }
+    .article-card:hover { border-color: rgba(212,175,55,0.3); background: rgba(212,175,55,0.03); }
+    .article-card-tag { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .article-card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--cream); line-height: 1.3; }
+    .article-card-excerpt { font-size: 0.88rem; line-height: 1.7; color: var(--text-mid); font-weight: 300; flex: 1; }
+    .article-card-link { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
+
+    /* ─── FOR WHO ─── */
+    .for-who { padding: 120px 60px; background: var(--bg-surface); }
+    .for-who-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .for-who-text { display: flex; flex-direction: column; gap: 24px; }
+    .for-who-text p { font-size: 1.05rem; line-height: 1.9; color: var(--text-mid); font-weight: 300; }
+    .for-who-text p strong { color: var(--cream); font-weight: 500; }
+    .for-who-list { display: flex; flex-direction: column; gap: 0; }
+    .for-who-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .for-who-list .for-who-item:first-child { border-top: 1px solid var(--border); }
+    .for-who-check { width: 20px; height: 20px; border: 1px solid var(--gold-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; color: var(--gold); font-size: 0.7rem; }
+    .for-who-item-text { font-size: 0.95rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; }
+    .for-who-item-text strong { color: var(--cream); font-weight: 500; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 64px 60px 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 60px; margin-bottom: 48px; }
+    .footer-brand { display: flex; flex-direction: column; gap: 16px; max-width: 300px; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: var(--cream); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .footer-tagline { font-size: 0.88rem; line-height: 1.7; color: var(--text-mid); font-weight: 300; }
+    .footer-nav { display: flex; gap: 60px; }
+    .footer-col { display: flex; flex-direction: column; gap: 14px; }
+    .footer-col-title { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .footer-col a { font-size: 0.88rem; color: var(--text-mid); text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(245,241,232,0.25); }
+    .footer-lang { display: flex; gap: 16px; }
+    .footer-lang a { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(245,241,232,0.35); text-decoration: none; transition: color .2s; }
+    .footer-lang a:hover { color: var(--cream); }
 
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
@@ -114,11 +162,19 @@
       .nav-open .nav-links { display: flex; }
       .hero { padding: 130px 24px 60px; }
       .hero-watermark { display: none; }
+      .stats-bar { padding: 24px; gap: 28px; flex-wrap: wrap; justify-content: space-around; }
+      .stat-sep { display: none; }
       .manifesto { padding: 70px 24px; }
-      .toc { padding: 70px 24px; }
-      .toc-row { gap: 16px; padding: 24px 4px; }
-      .toc-title { font-size: 1.05rem; }
-      footer { flex-direction: column; gap: 16px; text-align: center; }
+      .chapters { padding: 70px 24px; }
+      .chapter-grid { grid-template-columns: 1fr; }
+      .featured { padding: 70px 24px; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .for-who { padding: 70px 24px; }
+      .for-who-inner { grid-template-columns: 1fr; gap: 48px; }
+      footer { padding: 48px 24px 32px; }
+      .footer-top { flex-direction: column; gap: 40px; }
+      .footer-nav { flex-direction: column; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
@@ -160,30 +216,56 @@
       </div>
     </li>
   </ul>
-  <a href="#toc" class="nav-cta">Start the story →</a>
+  <a href="#chapters" class="nav-cta">All chapters →</a>
   <div class="lang-switch">
     <a href="/index.html">NL</a><span class="lang-sep">/</span><span class="active">EN</span>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <video class="hero-video" autoplay muted loop playsinline poster="/assets/video/hero-poster.jpg">
     <source src="/assets/video/hero.mp4" type="video/mp4" />
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-watermark">01</div>
+  <div class="hero-watermark">P</div>
   <div class="hero-inner">
-    <div class="hero-kicker">Prey to Hunter — Issue I</div>
+    <div class="hero-kicker">Prey to Hunter</div>
     <h1 class="hero-title">Become the <em>Hunter</em>,<br>not the prey.</h1>
     <div class="hero-quote">
       <p>The practical basics of mindset, social skills, dating, money and business — skills others pay thousands for, explained here for free for the first time.</p>
     </div>
     <div class="hero-actions">
-      <a href="#toc" class="btn-outline">Start the story →</a>
+      <a href="#chapters" class="btn-outline">All chapters →</a>
+      <a href="/en/mindset/the-foundation/" class="btn-ghost">Start reading ↓</a>
     </div>
   </div>
 </div>
 
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">10</span>
+    <span class="stat-label">Chapters</span>
+  </div>
+  <div class="stat-sep"></div>
+  <div class="stat">
+    <span class="stat-num">18</span>
+    <span class="stat-label">Articles live</span>
+  </div>
+  <div class="stat-sep"></div>
+  <div class="stat">
+    <span class="stat-num">NL / EN</span>
+    <span class="stat-label">Bilingual</span>
+  </div>
+  <div class="stat-sep"></div>
+  <div class="stat">
+    <span class="stat-num">Free</span>
+    <span class="stat-label">Always accessible</span>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
 <div class="manifesto">
   <div class="manifesto-inner">
     <div class="manifesto-label">The Mission</div>
@@ -205,50 +287,221 @@
   </div>
 </div>
 
-<div class="toc" id="toc">
-  <div class="section-inner">
-    <div class="section-label">Table of Contents</div>
-    <h2 class="section-title">Choose your chapter.</h2>
-    <div class="toc-list">
-      <a href="/en/mindset/" class="toc-row">
-        <span class="toc-num">01</span>
-        <span class="toc-info">
-          <span class="toc-title">Mindset &amp; Social</span>
-          <span class="toc-sub">Mindset · Social Skills · Dating &amp; Relationships</span>
-        </span>
-        <span class="toc-arrow">→</span>
+<!-- ALL CHAPTERS -->
+<div class="chapters" id="chapters">
+  <div class="chapters-inner">
+    <div class="section-label">The library</div>
+    <h2 class="section-title">All 10 chapters.</h2>
+    <p class="section-sub">Pick the area where you want to grow most right now. Each chapter stands on its own — start wherever you like.</p>
+    <div class="chapter-grid">
+
+      <a href="/en/mindset/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 01</span>
+        <span class="chapter-card-title">Mindset</span>
+        <span class="chapter-card-desc">The foundation of everything. How you think determines what you do, and what you do determines who you become. Radical responsibility, discipline over motivation, failure as data.</span>
+        <span class="chapter-card-arrow">Go to Mindset →</span>
+        <span class="chapter-card-wm">M</span>
       </a>
-      <a href="/en/appearance/" class="toc-row">
-        <span class="toc-num">02</span>
-        <span class="toc-info">
-          <span class="toc-title">Looks &amp; Health</span>
-          <span class="toc-sub">Appearance · Health</span>
-        </span>
-        <span class="toc-arrow">→</span>
+
+      <a href="/en/social-skills/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 02</span>
+        <span class="chapter-card-title">Social Skills</span>
+        <span class="chapter-card-desc">Building real connection without performing. Starting conversations, listening, positioning yourself — the system behind people who connect effortlessly.</span>
+        <span class="chapter-card-arrow">Go to Social Skills →</span>
+        <span class="chapter-card-wm">S</span>
       </a>
-      <a href="/en/money/" class="toc-row">
-        <span class="toc-num">03</span>
-        <span class="toc-info">
-          <span class="toc-title">Money &amp; Business</span>
-          <span class="toc-sub">Money · Business</span>
-        </span>
-        <span class="toc-arrow">→</span>
+
+      <a href="/en/dating/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 03</span>
+        <span class="chapter-card-title">Dating &amp; Relationships</span>
+        <span class="chapter-card-desc">Attraction without games. Approaching someone, dating, and building relationships that actually work — based on who you are, not who you think you should be.</span>
+        <span class="chapter-card-arrow">Go to Dating →</span>
+        <span class="chapter-card-wm">D</span>
       </a>
-      <a href="/en/skills/" class="toc-row">
-        <span class="toc-num">04</span>
-        <span class="toc-info">
-          <span class="toc-title">Skills &amp; Stories</span>
-          <span class="toc-sub">Skills · Life Skills · Success Stories</span>
-        </span>
-        <span class="toc-arrow">→</span>
+
+      <a href="/en/appearance/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 04</span>
+        <span class="chapter-card-title">Appearance</span>
+        <span class="chapter-card-desc">You always send a message — consciously or not. Clothing, body language, grooming. Not for others, but because you know that first impressions count.</span>
+        <span class="chapter-card-arrow">Go to Appearance →</span>
+        <span class="chapter-card-wm">A</span>
       </a>
+
+      <a href="/en/health/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 05</span>
+        <span class="chapter-card-title">Health</span>
+        <span class="chapter-card-desc">The foundation that carries everything. Sleep, movement, nutrition, mental health — you can't deliver peak performance if your body is running on reserves.</span>
+        <span class="chapter-card-arrow">Go to Health →</span>
+        <span class="chapter-card-wm">H</span>
+      </a>
+
+      <a href="/en/money/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 06</span>
+        <span class="chapter-card-title">Money</span>
+        <span class="chapter-card-desc">Money is a tool, not a goal. How the system works, how to create margin, how compound interest does what you don't when you're asleep.</span>
+        <span class="chapter-card-arrow">Go to Money →</span>
+        <span class="chapter-card-wm">M</span>
+      </a>
+
+      <a href="/en/business/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 07</span>
+        <span class="chapter-card-title">Business</span>
+        <span class="chapter-card-desc">From idea to income — without a 30-page business plan. Validate, find your first client, sell without being annoying, and scale when it works.</span>
+        <span class="chapter-card-arrow">Go to Business →</span>
+        <span class="chapter-card-wm">B</span>
+      </a>
+
+      <a href="/en/skills/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 08</span>
+        <span class="chapter-card-title">Skills</span>
+        <span class="chapter-card-desc">Learning to learn, writing, speaking, negotiating. Every skill you build makes you more valuable — and skills are the one thing nobody can take from you.</span>
+        <span class="chapter-card-arrow">Go to Skills →</span>
+        <span class="chapter-card-wm">S</span>
+      </a>
+
+      <a href="/en/life-skills/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 09</span>
+        <span class="chapter-card-title">Life Skills</span>
+        <span class="chapter-card-desc">Managing time and energy, cooking, dealing with difficult people. The practical things nobody teaches you but everyone needs to run their life well.</span>
+        <span class="chapter-card-arrow">Go to Life Skills →</span>
+        <span class="chapter-card-wm">L</span>
+      </a>
+
+      <a href="/en/success-stories/" class="chapter-card">
+        <span class="chapter-card-num">Chapter 10</span>
+        <span class="chapter-card-title">Success Stories</span>
+        <span class="chapter-card-desc">Theory is great. But nothing inspires more than a real story of someone who took the leap, failed, learned, and changed their life.</span>
+        <span class="chapter-card-arrow">Go to Stories →</span>
+        <span class="chapter-card-wm">S</span>
+      </a>
+
     </div>
   </div>
 </div>
 
+<!-- FEATURED ARTICLES -->
+<div class="featured">
+  <div class="featured-inner">
+    <div class="section-label">Recommended</div>
+    <h2 class="section-title">Start here.</h2>
+    <p class="section-sub">Six articles that make an immediate difference — wherever you are right now.</p>
+    <div class="featured-grid">
+
+      <a href="/en/mindset/the-foundation/" class="article-card">
+        <span class="article-card-tag">Mindset · Article 01</span>
+        <span class="article-card-title">Mindset: the foundation of everything</span>
+        <span class="article-card-excerpt">Radical responsibility, the comfort zone, discipline versus motivation — and why most people never change.</span>
+        <span class="article-card-link">Read the article →</span>
+      </a>
+
+      <a href="/en/money/how-money-works/" class="article-card">
+        <span class="article-card-tag">Money · Article 01</span>
+        <span class="article-card-title">How money really works</span>
+        <span class="article-card-excerpt">What school never taught you. Income, expenses, the three buckets, and compound interest — the complete framework in one article.</span>
+        <span class="article-card-link">Read the article →</span>
+      </a>
+
+      <a href="/en/skills/learning-to-learn/" class="article-card">
+        <span class="article-card-tag">Skills · Article 01</span>
+        <span class="article-card-title">Learning to learn</span>
+        <span class="article-card-excerpt">Retrieval practice, spaced repetition, the Feynman technique. The system behind people who pick up new skills at lightning speed.</span>
+        <span class="article-card-link">Read the article →</span>
+      </a>
+
+      <a href="/en/health/the-foundation/" class="article-card">
+        <span class="article-card-tag">Health · Article 01</span>
+        <span class="article-card-title">The foundation that carries everything</span>
+        <span class="article-card-excerpt">Sleep, movement, nutrition and mental health. Without this foundation nothing works — it is the base everything else rests on.</span>
+        <span class="article-card-link">Read the article →</span>
+      </a>
+
+      <a href="/en/business/from-idea-to-income/" class="article-card">
+        <span class="article-card-tag">Business · Article 01</span>
+        <span class="article-card-title">From idea to income</span>
+        <span class="article-card-excerpt">Validate before you build, find your first client, the minimum viable offer. Without waiting for perfect.</span>
+        <span class="article-card-link">Read the article →</span>
+      </a>
+
+      <a href="/en/life-skills/time-and-energy/" class="article-card">
+        <span class="article-card-tag">Life Skills · Article 01</span>
+        <span class="article-card-title">Managing time and energy</span>
+        <span class="article-card-excerpt">Being busy and being productive are two different things. The MIT method, the art of saying no, the four energy sources.</span>
+        <span class="article-card-link">Read the article →</span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOR WHO -->
+<div class="for-who">
+  <div class="for-who-inner">
+    <div class="for-who-text">
+      <div class="section-label">Who it's for</div>
+      <h2 class="section-title">For people who are done standing still.</h2>
+      <p>Prey to Hunter is not for everyone. It is for people who know there is more in them — but don't know where to start, or who to trust.</p>
+      <p>No <strong>motivational speech</strong>. No <strong>expensive course</strong>. No <strong>guru</strong>. Just the honest, practical basics — the things that work, explained without nonsense.</p>
+    </div>
+    <div class="for-who-list">
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>You feel there's more in you</strong>, but you're not sure how to bring it out.</span>
+      </div>
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>You're tired of vague advice</strong> and want concrete things you can apply today.</span>
+      </div>
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>You want to grow at your own pace</strong>, without the pressure of a community or paywall.</span>
+      </div>
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>You understand no skill comes for free</strong> — but you're willing to do the work.</span>
+      </div>
+      <div class="for-who-item">
+        <span class="for-who-check">✓</span>
+        <span class="for-who-item-text"><strong>You want to be the hunter</strong>, not the prey reacting to whatever comes at you.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></div>
-  <div class="footer-copy">© MMXXVI Prey to Hunter</div>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="/en/index.html" class="footer-logo"><img src="/assets/logo-mark-flat.png" alt="" class="logo-mark" />Prey to <span class="logo-accent">Hunter</span></a>
+      <p class="footer-tagline">Practical skills for people who are done standing still. Free, direct, without nonsense.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <span class="footer-col-title">Mindset &amp; Social</span>
+        <a href="/en/mindset/">Mindset</a>
+        <a href="/en/social-skills/">Social Skills</a>
+        <a href="/en/dating/">Dating &amp; Relationships</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Body &amp; Money</span>
+        <a href="/en/appearance/">Appearance</a>
+        <a href="/en/health/">Health</a>
+        <a href="/en/money/">Money</a>
+        <a href="/en/business/">Business</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Skills &amp; Stories</span>
+        <a href="/en/skills/">Skills</a>
+        <a href="/en/life-skills/">Life Skills</a>
+        <a href="/en/success-stories/">Success Stories</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© MMXXVI Prey to Hunter — All rights reserved</span>
+    <div class="footer-lang">
+      <a href="/index.html">Nederlandse versie</a>
+    </div>
+  </div>
 </footer>
 
 <script src="/assets/animations.js"></script>
